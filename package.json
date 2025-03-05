@@ -15,6 +15,11 @@
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run"
 	},
+	"dependencies": {
+		"@iconify/svelte": "^4.2.0",
+		"@supabase/ssr": "^0.5.2",
+		"@supabase/supabase-js": "^2.49.1"
+	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
