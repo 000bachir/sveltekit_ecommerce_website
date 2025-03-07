@@ -1,15 +1,14 @@
-import { error , redirect } from "@sveltejs/kit";
-import type { RequestHandler } from "./$types";
+import { supabase } from "$lib/Supabase/SupabaseClient";
+import { json } from "@sveltejs/kit";
 
-
-export const POST : RequestHandler = async ({locals:{supabase}}) => {
-    const {error :err } = await supabase.auth.signOut()
-
-    if(error){
-        throw error(500,"something went wrong logging you out")
+export const POST = async ({ cookies }) => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+        return json({ error: "Failed to log out" }, { status: 500 });
     }
+    // Clear cookies (if using cookie-based authentication)
+    cookies.delete("sb-access-token", { path: "/" });
+    cookies.delete("sb-refresh-token", { path: "/" });
 
-    throw redirect(303 , "/")
-    
-
-}
+    return json({ success: true });
+};

@@ -1,26 +1,43 @@
 <script lang="ts">
 	import '../app.css';
 
-	import {invalidate} from "$app/navigation"
+	import { goto, invalidate, invalidateAll } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import PublicNavbar from '$lib/components/Shared_Ui/PublicNavbar.svelte';
+	import PrivateNavbar from '$lib/components/Shared_Ui/PrivateNavbar.svelte';
 
-	let { data , children } = $props();
-	let {session , supabase} = $derived(data)
+	let { data, children } = $props();
+	let { session, supabase } = $derived(data);
 
+	onMount(() => {
+		$effect(()=> {
+			const { data } = supabase.auth.onAuthStateChange((_, newSession) => {
 
-	onMount(()=>{
-		const { data } =  supabase.auth.onAuthStateChange((_,newSession)=>{
-			if(
-				newSession?.expires_at !== session?.expires_at
-			){
-				invalidate('supabase:auth')
-			}
+				if(!newSession){
+					setTimeout(()=>{
+						goto('/' , {invalidateAll : true})
+					},3000)
+				}
+
+				if (newSession?.expires_at !== session?.expires_at) {
+					invalidate('supabase:auth');
+				}
+			});
+			return () => data.subscription.unsubscribe();
 		})
-		return () => data.subscription.unsubscribe()
-	})
-
-
-
+	});
 </script>
+
+<header class="h-20 w-full relative overflow-hidden border-b-[1px] border-b-gray-600">
+	{#if data.session}
+		<PrivateNavbar />
+	{:else}
+		<PublicNavbar />
+	{/if}
+</header>
+
+
+
+
 
 {@render children()}
