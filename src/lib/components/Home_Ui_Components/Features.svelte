@@ -4,7 +4,7 @@
 	import { onDestroy, onMount } from 'svelte';
   
 
-    let Images = import.meta.glob("$lib/assets/Images/*.webp" , {eager : true})
+    let Images = import.meta.glob("$lib/assets/Images/*.webp" , {eager : true , query : {enhanced : true}})
     let ListofImages = Object.values(Images).map((image : any) => image.default)
 
 
@@ -59,8 +59,8 @@
 
 
     <div id="list" class="overflow-hidden columns-[300px]">
-        {#each ListofImages as Image }
-            <img src={Image} alt="" loading="lazy" class="w-full mb-[1em]">
+        {#each ListofImages as [_ ,Image] }
+            <enhanced:img src={Image} alt="" loading="lazy" class="w-full mb-[1em]" />
         {/each}
     </div>
 

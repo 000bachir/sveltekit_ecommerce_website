@@ -3,8 +3,8 @@
 
 	import { goto, invalidate, invalidateAll } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import PublicNavbar from '$lib/components/Shared_Ui/PublicNavbar.svelte';
-	import PrivateNavbar from '$lib/components/Shared_Ui/PrivateNavbar.svelte';
+	import PublicNavbar from '$lib/components/Shared_Ui/Navbar/PublicNavbar.svelte';
+	import PrivateNavbar from '$lib/components/Shared_Ui/Navbar/PrivateNavbar.svelte';
 
 	let { data, children } = $props();
 	let { session, supabase } = $derived(data);

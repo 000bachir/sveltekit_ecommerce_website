@@ -54,8 +54,8 @@
 				<span class="xs:hidden whitespace-nowrap text-lg font-bold text-white ">Home</span>
 			</a>
 			<a
-				href="/private/Market"
-				id="market"
+				href="/about"
+				id="about"
 				class=" xs:hidden group flex w-full items-center justify-start gap-3 rounded-lg px-0 sm:px-2 md:hidden lg:flex"
 				aria-label="Market"
 			>
@@ -68,7 +68,7 @@
 			</a>
 			<a	
 				id='faq'
-				href="/FAQ"
+				href="/faq"
 				class="xs:hidden group flex w-full items-center justify-start gap-3 rounded-lg md:hidden lg:flex"
 				aria-label="Faq"
 			>
@@ -80,7 +80,7 @@
 				<span class="whitespace-nowrap text-lg font-bold sm:inline text-white">Faq</span>
 			</a>
 			<a
-				href="/auth"
+				href="/auth/register"
 				class="group flex w-full items-center justify-start rounded-lg"
 				aria-label="sign~in"
 				id="sign-in"
@@ -183,7 +183,7 @@
 		#logo-name-side > a {
 			font-size:1.2rem;
 		}
-		#home , #market , #faq , #sign-in {
+		#home , #about , #faq , #sign-in {
 			font-size:.8rem;
 		}
 	}
@@ -204,7 +204,7 @@
 		}
 	}
 	@media screen and (max-width:425px){
-		#home , #market , #faq , #sign-in{
+		#home , #about , #faq , #sign-in{
 			display:none;
 		}
 	}

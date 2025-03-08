@@ -139,7 +139,7 @@
 			id="first_section_img"
 			class="clip-path absolute right-36 top-0 h-full w-[45%] overflow-hidden"
 		>
-			<img src={HeaderImage} class="block h-full w-full object-cover" alt="" loading="lazy" />
+			<enhanced:img src={HeaderImage} class="block h-full w-full object-cover" alt="" loading="lazy" />
 		</div>
 	</section>
 
@@ -148,7 +148,7 @@
 	<section class="relative h-dvh w-full">
 		<div id="about-wrapper" class="relative flex h-full w-full overflow-hidden">
 			<div id="about_image" class="relative h-full w-[40%] overflow-hidden rounded-lg">
-				<img
+				<enhanced:img
 					src={Image}
 					class="absolute h-full w-full rounded-lg object-contain"
 					alt=""
