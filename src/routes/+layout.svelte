@@ -5,6 +5,7 @@
 	import { onMount } from 'svelte';
 	import PublicNavbar from '$lib/components/Shared_Ui/Navbar/PublicNavbar.svelte';
 	import PrivateNavbar from '$lib/components/Shared_Ui/Navbar/PrivateNavbar.svelte';
+	import Footer from '$lib/components/Shared_Ui/Footer/Footer.svelte';
 
 	let { data, children } = $props();
 	let { session, supabase } = $derived(data);
@@ -35,9 +36,5 @@
 		<PublicNavbar />
 	{/if}
 </header>
-
-
-
-
-
 {@render children()}
+<Footer />

@@ -60,7 +60,7 @@
 
     <div id="list" class="overflow-hidden columns-[300px]">
         {#each ListofImages as [_ ,Image] }
-            <enhanced:img src={Image} alt="" loading="lazy" class="w-full mb-[1em]" />
+            <img src={Image} alt="" loading="lazy" class="w-full mb-[1em]" />
         {/each}
     </div>
 
