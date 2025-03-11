@@ -1,32 +1,33 @@
 <script lang="ts">
     import Logo from '$lib/assets/svg/LogoSite.svg';
     import Icon from "@iconify/svelte";
-    // function OpenNav(){
-	// 	let SideNav = document.getElementById("side-navigation") as HTMLElement
-	// 	let openBtn = document.getElementById("open-btn") as HTMLButtonElement
-	// 	openBtn.addEventListener("click" , (e:Event)=>{
-	// 		if(document.activeElement === e.target){
-	// 			SideNav.style.width = "100%"
-	// 			SideNav.style.transitionDelay = "500ms"
-	// 		}
-	// 	})
-	// }
-	// function CloseNav(){
-	// 	let SideNav = document.getElementById("side-navigation") as HTMLElement
-	// 	let CloseBtn = document.getElementById("close-btn") as HTMLButtonElement
-	// 	CloseBtn.addEventListener("click" , (e:Event)=>{
-	// 		if(document.activeElement === e.target){
-	// 			SideNav.style.width = "0%"
-	// 			SideNav.style.transitionDelay = "500ms"
-	// 		}
-	// 	})
-	// }
+    import LogoutButton from '$lib/components/UI/LogoutButton.svelte';
+    function OpenNav(){
+		let SideNav = document.getElementById("side-navigation") as HTMLElement
+		let openBtn = document.getElementById("open-btn") as HTMLButtonElement
+		openBtn.addEventListener("click" , (e:Event)=>{
+			if(document.activeElement === e.target){
+				SideNav.style.width = "100%"
+				SideNav.style.transitionDelay = "500ms"
+			}
+		})
+	}
+	function CloseNav(){
+		let SideNav = document.getElementById("side-navigation") as HTMLElement
+		let CloseBtn = document.getElementById("close-btn") as HTMLButtonElement
+		CloseBtn.addEventListener("click" , (e:Event)=>{
+			if(document.activeElement === e.target){
+				SideNav.style.width = "0%"
+				SideNav.style.transitionDelay = "500ms"
+			}
+		})
+	}
 
 </script>
 
 
 <nav class="">
-    <!-- <nav class="relative mx-auto flex h-full w-[95%] items-center justify-between ">
+    <nav class="relative mx-auto flex h-full w-[95%] items-center justify-between ">
         <div id="logo-name-side" class="flex items-center">
             <img src={Logo} alt="" class="aspect-square h-16" />
             <a class=" whitespace-nowrap text-xl font-bold text-white  " href="/"
@@ -85,7 +86,9 @@
                     >
                     <Icon icon="material-symbols-light:tv-signin" width="24" height="24" color="white" />
                     </div>
-                    <span class="xs:hidden  text-lg font-bold sm:inline text-white">Sign~in</span>
+                    <form action="">
+                        <LogoutButton  />
+                    </form>
                 </a>
                 <button
                     class="group flex items-center gap-1 rounded-xl bg-red-300 px-2 py-1 shadow-md transition-all hover:bg-black lg:hidden"
@@ -171,7 +174,7 @@
                 </a>
             </div>
         </div>
-    </div> -->
+    </div> 
     hello world sss
 </nav>
 

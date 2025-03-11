@@ -13,14 +13,20 @@
         }
         cancel()
     }
-
-
 </script>
 
-<h1>
+<svelte:head>
+    <title>
+        market
+    </title>
+</svelte:head>
+
+<!-- <h1>
     hello world from the market page 
-    <form action="/auth/logout" method="GET" use:enhance={logout}>
-        <button type="submit" class="btn btn-primary">Logout</button>
-    </form>
-    
 </h1>
+<form action="/auth/logout" method="GET" use:enhance={logout}>
+    <button type="submit" class="btn btn-primary">Logout</button>
+</form> -->
+<div class="h-dvh w-full relative bg-green-500"></div>
+<div class="h-dvh w-full relative bg-orange-500"></div>
+
