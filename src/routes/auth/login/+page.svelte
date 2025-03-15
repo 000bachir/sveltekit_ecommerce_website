@@ -1,38 +1,10 @@
 <script lang="ts">
-    import {supabase} from "$lib/Supabase/SupabaseClient"
-    import type { Provider } from '@supabase/supabase-js';
     import { enhance } from '$app/forms';
     import type { SubmitFunction } from '@sveltejs/kit';
-    //@ts-ignore
     import type { PageData } from './$types';
     import ImageForLogin from "$lib/assets/Images/Image03.webp"
 
-
-    
     let { data }: { data: PageData } = $props();
-
-    // const signInWithProvider = async(provider : Provider) => {
-    //     const {data , error} = await supabase.auth.signInWithOAuth({
-    //         provider : provider
-    //     })
-    // }
-
-    // const submitSocialLogin :SubmitFunction = async({action , cancel}) => {
-    //     switch (action.searchParams.get('provider')){
-    //         case 'google' :
-    //             await signInWithProvider('google')
-    //             break
-    //         case 'discord' :
-    //             await signInWithProvider('discord')
-    //             break
-    //         case 'github' :
-    //             await signInWithProvider('github')
-    //             break
-    //         default :
-    //         break
-    //     }
-    //     cancel()
-    // }
 </script>
 
 <svelte:head>
@@ -64,11 +36,7 @@
                 </form>
 
                 <h2>Or choose one of these providers</h2>
-                <!--<form class="socials" method="POST" action="?/oauthLogin">
-                    <button class="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl rounded-xl" formaction="?/oauthLogin&provider=github">Github</button>
-                    <button class="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl rounded-xl" formaction="?/oauthLogin&provider=discord">Discord</button>
-                    <button class="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl rounded-xl" formaction="?/oauthLogin&provider=google">Google</button> 
-                </form> -->
+               
                 <form class="socials" method="POST" action="?/oauthLogin">
                     <input type="hidden" name="provider" value="github">
                     <button class="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl rounded-xl" type="submit">Github</button>

@@ -1,18 +1,8 @@
 <script lang="ts">
-    import { enhance } from "$app/forms";
-    import { supabase } from "$lib/Supabase/SupabaseClient";
-    import type { PageData } from "./$types";
+    
+    import MenImage from "$lib/assets/Images/Image01.webp"
+    import WomenImage from "$lib/assets/Images/Image02.webp"
 
-
-    let {data} = $props()
-    //@ts-ignore
-    const logout = async({cancel}) => {
-        const {error} = await supabase.auth.signOut()
-        if(error){
-            console.log(error)
-        }
-        cancel()
-    }
 </script>
 
 <svelte:head>
@@ -21,12 +11,19 @@
     </title>
 </svelte:head>
 
-<!-- <h1>
-    hello world from the market page 
-</h1>
-<form action="/auth/logout" method="GET" use:enhance={logout}>
-    <button type="submit" class="btn btn-primary">Logout</button>
-</form> -->
-<div class="h-dvh w-full relative bg-green-500"></div>
-<div class="h-dvh w-full relative bg-orange-500"></div>
 
+
+<section class='h-dvh w-full relative overflow-hidden flex items-center justify-center gap-4'>
+    <div class="flex items-center justify-center h-80 aspect-video rounded-2xl shadow-2xl border border-white relative overflow-hidden">
+        <a href="/private/market/mens" data-sveltekit-preload-data>        
+            <img src={MenImage} alt="" class="h-full w-full object-cover">
+        </a>
+        <h1 class="absolute z-20 text-5xl text-center">Men Sections</h1>
+    </div>
+    <div class="h-80 aspect-video rounded-2xl shadow-2xl border border-white relative overflow-hidden flex items-center justify-center">
+        <a href="/private/market/womens" data-sveltekit-preload-data>
+            <img src={WomenImage} alt="" class="h-full w-full object-cover">
+        </a>
+        <h1 class="absolute z-20 text-5xl text-green-500">Women Sections</h1>
+    </div>
+</section>
