@@ -3,8 +3,6 @@
 <script lang="ts">
 	import Logo from '$lib/assets/svg/LogoSite.svg';
     import Icon from "@iconify/svelte";
-
-
 	function OpenNav(){
 		let SideNav = document.getElementById("side-navigation") as HTMLElement
 		let openBtn = document.getElementById("open-btn") as HTMLButtonElement
@@ -25,9 +23,6 @@
 			}
 		})
 	}
-
-		
-
 
 </script>
 
@@ -66,7 +61,7 @@
 				</div>
 				<span class="whitespace-nowrap text-lg font-bold sm:inline text-white">About</span>
 			</a>
-			<a	
+			<!-- <a	
 				id='faq'
 				href="/faq"
 				class="xs:hidden group flex w-full items-center justify-start gap-3 rounded-lg md:hidden lg:flex"
@@ -78,7 +73,7 @@
                 <Icon icon="akar-icons:question-fill" width="24" height="24" color="white" />
 				</div>
 				<span class="whitespace-nowrap text-lg font-bold sm:inline text-white">Faq</span>
-			</a>
+			</a> -->
 			<a
 				href="/auth/register"
 				class="group flex w-full items-center justify-start rounded-lg"
@@ -183,7 +178,7 @@
 		#logo-name-side > a {
 			font-size:1.2rem;
 		}
-		#home , #about , #faq , #sign-in {
+		#home , #about  , #sign-in {
 			font-size:.8rem;
 		}
 	}
@@ -204,7 +199,7 @@
 		}
 	}
 	@media screen and (max-width:425px){
-		#home , #about , #faq , #sign-in{
+		#home , #about  , #sign-in{
 			display:none;
 		}
 	}

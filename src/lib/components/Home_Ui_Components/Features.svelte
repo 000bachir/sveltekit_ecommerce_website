@@ -4,7 +4,7 @@
 	import { onDestroy, onMount } from 'svelte';
   
 
-    let Images = import.meta.glob("$lib/assets/Images/*.webp" , {eager : true , query : {enhanced : true}})
+    let Images = import.meta.glob("$lib/assets/Images/*.webp" , {eager : true})
     let ListofImages = Object.values(Images).map((image : any) => image.default)
 
 
@@ -42,9 +42,9 @@
 </script>
 
 <section class="relative inset-0 h-full w-full overflow-hidden">
-	<article class="h-auto w-full">
+	<article class="h-auto w-full ">
 		<div id="wrapper" class="relative z-10 mt-4 flex h-28 w-full items-center justify-center">
-			<h1 class="flex gap-1 text-4xl text-white">
+			<h1 class="flex gap-2 text-4xl text-white">
 				<span class="text">A</span>
 				<span class="text">place</span>
 				<span class="text">where</span>
@@ -56,13 +56,13 @@
 			</h1>
 		</div>
 	</article>
+	<div id="list" class="overflow-hidden columns-[300px]">
+		{#each ListofImages as Image }
+			<img src={Image} alt="" loading="lazy" class="w-full mb-[1em]" />
+		{/each}
+	</div>
 
 
-    <div id="list" class="overflow-hidden columns-[300px]">
-        {#each ListofImages as [_ ,Image] }
-            <img src={Image} alt="" loading="lazy" class="w-full mb-[1em]" />
-        {/each}
-    </div>
 
 </section>
 

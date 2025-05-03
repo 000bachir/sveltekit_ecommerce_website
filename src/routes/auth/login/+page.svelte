@@ -1,8 +1,10 @@
 <script lang="ts">
     import { enhance } from '$app/forms';
     import type { SubmitFunction } from '@sveltejs/kit';
+    //@ts-ignore
     import type { PageData } from './$types';
     import ImageForLogin from "$lib/assets/Images/Image03.webp"
+    import Icon from "@iconify/svelte";
 
     let { data }: { data: PageData } = $props();
 </script>
@@ -39,7 +41,15 @@
                
                 <form class="socials" method="POST" action="?/oauthLogin">
                     <input type="hidden" name="provider" value="github">
-                    <button class="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl rounded-xl" type="submit">Github</button>
+                    <button class="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl rounded-xl" type="submit">
+                        <Icon icon="mdi:github" width="35" height="35" />
+                    </button>
+                    <button class="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl rounded-xl" type="submit">
+                        <Icon icon="logos:google-gmail" width="35" height="35" />
+                    </button>
+                    <button class="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl rounded-xl" type="submit">
+                        <Icon icon="skill-icons:discord" width="35" height="35" />
+                    </button>
                 </form>
             </div>
                 

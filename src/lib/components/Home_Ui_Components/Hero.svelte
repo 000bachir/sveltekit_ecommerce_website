@@ -1,34 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	// function FancySentenceHoverEffect() {
-	// 	const sentence = document.getElementById('intro-title');
-	// 	if (!sentence || sentence.dataset.processed) return;
-
-	// 	const splittedSentence = sentence.textContent!.split('')
-	// 	sentence.innerHTML = "" ;
-	// 	let spans = Array.from(sentence.children) as HTMLSpanElement[]
-	// 	spans = splittedSentence.map((char , index) => {
-	// 		const span = document.createElement("span")
-	// 		span.textContent = char
-	// 		span.dataset.index = String(index)
-	// 		sentence.appendChild(span)
-	// 		return span
-	// 	})
-	// 	sentence.dataset.processed = "true"
-
-	// 	sentence.addEventListener('mouseenter' , (event : MouseEvent)=> {
-	// 		const target = event.target as HTMLElement
-	// 		if (!target || target.tagName !== "SPAN") return;
-
-	// 		const index = parseInt(target.dataset.index! , 10)
-	// 		spans.forEach((span)=> span.classList.remove("hovered" , "hovered-adjacent"))
-	// 		target.classList.add("hovered")
-	// 		if (index > 0) spans[index - 1].classList.add('hovered-adjacent');
-	//     	if (index < spans.length - 1) spans[index + 1].classList.add('hovered-adjacent');
-
-	// 	})
-	// }
 	function FancySentenceHoverEffect() {
 		const sentence = document.getElementById('intro-title');
 		if (!sentence) return;
@@ -99,6 +71,12 @@
 		animation: floating var(--_float-speed) ease-in-out infinite;
 		will-change: transform;
 	}
+	@media (prefers-reduced-motion: no-preference) {
+		#buble {
+			animation: floating var(--_float-speed) ease-in-out infinite;
+		}
+	}
+
 	#buble::before,
 	#buble::after {
 		position: absolute;

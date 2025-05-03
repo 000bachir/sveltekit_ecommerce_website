@@ -2,7 +2,7 @@
 	import { onDestroy, onMount } from 'svelte';
 	import gsap from 'gsap';
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-	import PeopleReaction from '$lib/components/home_ui_components/Testimonials/PeopleReaction.svelte';
+	import PeopleReaction from './PeopleReaction.svelte';
 
 
 	function createScrollTriggerProperties(triggerElement: HTMLElement) {

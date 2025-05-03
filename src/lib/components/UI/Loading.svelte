@@ -10,9 +10,7 @@
 		--point-color: #555;
 		--size: 5px;
 	}
-	body {
-		background-color: var(--main-color);
-	}
+	
 	.loader {
 		overflow: hidden;
 		width: 100%;

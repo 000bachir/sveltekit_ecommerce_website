@@ -11,13 +11,12 @@
 	let { session, supabase } = $derived(data);
 
 	onMount(() => {
-		$effect(()=> {
+		$effect(() => {
 			const { data } = supabase.auth.onAuthStateChange((_, newSession) => {
-
-				if(!newSession){
-					setTimeout(()=>{
-						goto('/' , {invalidateAll : true})
-					},3000)
+				if (!newSession) {
+					setTimeout(() => {
+						goto('/', { invalidateAll: true });
+					}, 3000);
 				}
 
 				if (newSession?.expires_at !== session?.expires_at) {
@@ -25,11 +24,11 @@
 				}
 			});
 			return () => data.subscription.unsubscribe();
-		})
+		});
 	});
 </script>
 
-<header class="h-20 w-full relative overflow-hidden border-b-[1px] border-b-gray-600">
+<header class="relative h-20 w-full overflow-hidden border-b-[1px] border-b-gray-600">
 	{#if data.session}
 		<PrivateNavbar />
 	{:else}

@@ -2,9 +2,7 @@
 	import HeaderImage from '$lib/assets/images/Intro_Image_01.webp';
 	import Image from '$lib/assets/images/Intro_Image_02.webp';
 	import { onMount, onDestroy } from 'svelte';
-	//@ts-ignore
 	import gsap from 'gsap';
-	//@ts-ignore
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 	function FirstSectionParralexEffect() {
@@ -121,7 +119,6 @@
 
 <main class="relative h-auto w-full overflow-hidden">
 	<!--! first section-->
-
 	<section
 		id="first_section"
 		class="relative flex h-dvh w-full items-center justify-center px-16 py-0"
@@ -142,9 +139,7 @@
 			<img src={HeaderImage} class="block h-full w-full object-cover" alt="" loading="lazy" />
 		</div>
 	</section>
-
 	<!--! second section -->
-
 	<section class="relative h-dvh w-full">
 		<div id="about-wrapper" class="relative flex h-full w-full overflow-hidden">
 			<div id="about_image" class="relative h-full w-[40%] overflow-hidden rounded-lg">

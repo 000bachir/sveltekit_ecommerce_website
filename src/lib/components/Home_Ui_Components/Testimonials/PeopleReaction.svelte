@@ -53,6 +53,7 @@
 						<img
 							src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg"
 							alt=""
+							loading="lazy"
 						/>
 					</div>
 					<div class="detbox">
@@ -77,6 +78,7 @@
 						<img
 							src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jonathan.jpg"
 							alt=""
+							loading="lazy"
 						/>
 					</div>
 					<div class="detbox">
@@ -99,6 +101,7 @@
 						<img
 							src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg"
 							alt=""
+							loading="lazy"
 						/>
 					</div>
 					<div class="detbox">
@@ -122,6 +125,7 @@
 						<img
 							src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jeanette.jpg"
 							alt=""
+							loading="lazy"
 						/>
 					</div>
 					<div class="detbox">
@@ -144,6 +148,7 @@
 						<img
 							src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-patrick.jpg"
 							alt=""
+							loading="lazy"
 						/>
 					</div>
 					<div class="detbox">

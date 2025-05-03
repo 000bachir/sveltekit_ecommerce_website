@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Logo from '$lib/assets/svg/LogoSite.svg';
 	import Icon from '@iconify/svelte';
-	import LogoutButton from '$lib/components/UI/LogoutButton.svelte';
 	import { supabase } from '$lib/Supabase/SupabaseClient';
 	import { enhance } from '$app/forms';
 
