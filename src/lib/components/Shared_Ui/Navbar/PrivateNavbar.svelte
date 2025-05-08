@@ -61,7 +61,7 @@
 					<span class="xs:hidden text-lg font-bold whitespace-nowrap text-white">Home</span>
 				</a>
 				<a
-					href="/private/Market"
+					href="/private/market"
 					id="market"
 					class=" xs:hidden group flex w-full items-center justify-start gap-3 rounded-lg px-0 sm:px-2 md:hidden lg:flex"
 					aria-label="Market"

@@ -1,56 +1,42 @@
-<script lang="ts">
-	let { color = 'currentColor', isHovered = false, classes = '' } = $props();
-
-	function HandleMouseEnter() {
-		isHovered = true;
-
-		setTimeout(() => {
-			isHovered = false;
-		}, 1000);
-	}
-</script>
-
-<div class={classes} aria-label="cart-icon" role="img" onmouseenter={HandleMouseEnter}>
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="30"
-		height="30"
-		viewBox="0 0 24 24"
-		fill="none"
-		stroke={color}
-		stroke-width="2"
-		stroke-linecap="round"
-		stroke-linejoin="round"
-		class="cart-icon"
-		class:animate={isHovered}
-	>
-		<path
-			d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
-		/>
+<script>
+	import { cartTotals } from "$lib/stores/CartStore";
+	
+	export let showCount = true;
+  </script>
+  
+  <a href="/cart" class="cart-icon">
+	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	  <circle cx="8" cy="21" r="1"></circle>
+	  <circle cx="19" cy="21" r="1"></circle>
+	  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
 	</svg>
-</div>
-
-<style>
+	
+	{#if showCount && $cartTotals.itemCount > 0}
+	  <span class="cart-count">{$cartTotals.itemCount}</span>
+	{/if}
+  </a>
+  
+  <style>
 	.cart-icon {
-		transition: all 500ms ease;
+	  position: relative;
+	  display: inline-flex;
+	  color: inherit;
+	  text-decoration: none;
 	}
-	.cart-icon.animate {
-		animation: cartBounce 1s normal;
+	
+	.cart-count {
+	  position: absolute;
+	  top: -8px;
+	  right: -8px;
+	  background-color: #ef4444;
+	  color: white;
+	  font-size: 0.75rem;
+	  font-weight: bold;
+	  width: 1.25rem;
+	  height: 1.25rem;
+	  border-radius: 50%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
 	}
-
-	@keyframes cartBounce {
-		0%,
-		100% {
-			transform: scale(1) translateY(0);
-		}
-		25% {
-			transform: scale(1.1) translateY(-5px);
-		}
-		50% {
-			transform: scale(1) translateY(0);
-		}
-		75% {
-			transform: scale(1.1) translateY(-5px);
-		}
-	}
-</style>
+  </style>

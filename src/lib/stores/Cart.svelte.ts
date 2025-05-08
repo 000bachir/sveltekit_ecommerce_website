@@ -1,13 +1,13 @@
 import type { CartProduct } from "$lib/types/cartProduct";
 
-export const cartProduct = $state<CartProduct[]>([])
+export const CartProducts = $state<CartProduct[]>([])
 
 export function RemoveItemsFromCart(id : string) {
-    const index = cartProduct.findIndex((product)=>{
+    const index = CartProducts.findIndex((product)=>{
         product.id === id
     })
 
     if(index > -1){
-        cartProduct.splice(index , 1)
+        CartProducts.splice(index , 1)
     }
 }
