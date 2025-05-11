@@ -67,4 +67,11 @@
 </section>
 
 <style lang="postcss">
+
+	@media screen and (max-width:425px){
+		#wrapper > h1{
+			font-size:.9rem;
+		}
+	}
+
 </style>

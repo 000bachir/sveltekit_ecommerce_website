@@ -28,9 +28,9 @@
 	});
 </script>
 
-<header class="relative h-20 w-full overflow-hidden border-b-[1px] border-b-gray-600">
+<header class="relative h-20 w-full border-b-[1px] border-b-gray-600">
 	{#if data.session}
-		<PrivateNavbar />
+		<PrivateNavbar {data} />
 	{:else}
 		<PublicNavbar />
 	{/if}
