@@ -50,7 +50,7 @@
 				>
 					<Icon icon="bxs:store" width="24" height="24" color="white" />
 				</div>
-				<span class="text-lg font-bold whitespace-nowrap text-white sm:inline">Market</span>
+				<span class="text-lg font-bold whitespace-nowrap text-white ">Market</span>
 			</a>
 			<a
 				id="faq"
@@ -95,7 +95,7 @@
 </nav>
 
 {#if NavbarToggle}
-	<div id="side-navigation" class="absolute top-0 left-0 z-10 h-dvh w-full ">
+	<div id="side-navigation" class="absolute top-0 left-0 z-10 h-dvh w-full">
 		<div id="side-nav-container" class="float-end grid h-full w-[95%] grid-rows-4">
 			<div id="logo-part" class="row-span-1 flex items-center justify-around">
 				<div class="flex items-center">
@@ -128,7 +128,7 @@
 						>
 							<span><i class="fa-solid fa-house"></i></span>
 						</div>
-						<span class="xs:hidden text-lg font-bold whitespace-nowrap sm:inline">Home</span>
+						<span class="text-lg font-bold whitespace-nowrap">Home</span>
 					</a>
 					<a
 						href="/Market"
@@ -143,7 +143,7 @@
 						<span class="text-lg font-bold">Market</span>
 					</a>
 					<a
-						href="/FAQ"
+						href="/private/faq"
 						class="xs:hidden group flex w-full items-center justify-start gap-3 rounded-lg md:hidden lg:flex"
 						aria-label="Faq"
 					>
@@ -152,7 +152,7 @@
 						>
 							<span><i class="fa-solid fa-question"></i></span>
 						</div>
-						<span class="text-lg font-bold whitespace-nowrap sm:inline">Faq</span>
+						<span class="text-lg font-bold whitespace-nowrap ">Faq</span>
 					</a>
 				</ul>
 			</div>
@@ -179,13 +179,10 @@
 
 <style lang="postcss">
 	#side-navigation {
-		background: #cb2d3e; /* fallback for old browsers */
-		background: -webkit-linear-gradient(
-			to right,
-			#cb2d3e,
-			#ef473a
-		); /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to right, #cb2d3e, #ef473a);
+		background: #0575E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 	}
 
 	@media screen and (max-width: 1024px) {
